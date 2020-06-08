@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/main.css" />
-    <title>goit-markup-hw-05</title>
+    <title>goit-markup-hw-06</title>
   </head>
   <body>
     <!-- Шапка сайта -->
@@ -67,7 +67,7 @@
             эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <a href="" class="button">Заказать услугу</a>
+          <a href="" class="button" data-open-modal>Заказать услугу</a>
         </div>
       </section>
 
@@ -463,6 +463,21 @@
           </ul>
         </div>
       </section>
+
+      <!-- Модальное окно - Заказать услугу -->
+
+      <div class="backdrop is-hidden" data-backdrop>
+        <div class="modal">
+          <button class="btn" data-close-modal>
+            <svg class="icon-btn-close" width="11" height="11">
+              <use href="./img/icon-close.svg#icon-btn-close"></use>
+            </svg>
+          </button>
+          <form class="form">
+            <p class="form-text">Оставьте свои данные, мы вам перезвоним</p>
+          </form>
+        </div>
+      </div>
     </main>
 
     <!-- Футер -->
@@ -549,5 +564,25 @@
         <p class="copyrigyt">2020 | Developed by GoIT Students</p>
       </div>
     </footer>
+    <script>
+      const refs = {
+        openModalBtn: document.querySelector('[data-open-modal]'),
+        closeModalBtn: document.querySelector('[data-close-modal]'),
+        backdrop: document.querySelector('[data-backdrop]'),
+      };
+
+      refs.openModalBtn.addEventListener('click', toggleModal);
+      refs.closeModalBtn.addEventListener('click', toggleModal);
+
+      refs.backdrop.addEventListener('click', logBackdropClick);
+
+      function toggleModal() {
+        refs.backdrop.classList.toggle('is-hidden');
+      }
+
+      function logBackdropClick() {
+        console.log('Это клик в бекдроп');
+      }
+    </script>
   </body>
 </html>
