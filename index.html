@@ -473,8 +473,35 @@
               <use href="./img/icon-close.svg#icon-btn-close"></use>
             </svg>
           </button>
-          <form class="form">
+          <form class="form js-speaker-form">
             <p class="form-text">Оставьте свои данные, мы вам перезвоним</p>
+
+            <div class="form-field">
+              <label for="name">Имя</label>
+              <input type="text" name="name" id="name" />
+            </div>
+
+            <div class="form-field">
+              <label for="">Телефон</label>
+              <input type="text" name="" id="" />
+            </div>
+
+            <div class="form-field">
+              <label for="">Почта</label>
+              <input type="text" name="" id="" />
+            </div>
+
+            <div class="form-field">
+              <label for="comments">Комментарий</label>
+              <textarea name="comments" id="comments" rows="10"></textarea>
+            </div>
+
+            <div class="form-field">
+              <input type="checkbox" name="consent" id="consent" />
+              <label for="consent"></label>
+            </div>
+
+            <button type="submit">Отправить</button>
           </form>
         </div>
       </div>
@@ -564,6 +591,8 @@
         <p class="copyrigyt">2020 | Developed by GoIT Students</p>
       </div>
     </footer>
+
+    <!-- JS -->
     <script>
       const refs = {
         openModalBtn: document.querySelector('[data-open-modal]'),
@@ -583,6 +612,22 @@
       function logBackdropClick() {
         console.log('Это клик в бекдроп');
       }
+
+      // FORM JS
+
+      (() => {
+        document
+          .querySelector('.js-speaker-form')
+          .addEventListener('submit', e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`),
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
     </script>
   </body>
 </html>
