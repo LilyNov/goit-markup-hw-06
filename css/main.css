@@ -142,12 +142,14 @@
 /* Модальное окно - форма */
 
 .form {
-  padding: 40px;
   width: 528px;
   height: 581px;
+  padding: 40px;
 }
 
 .form-about {
+  margin: 0;
+  padding: 0;
   margin-bottom: 30px;
 
   font-weight: 700;
@@ -164,7 +166,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 38px;
+  margin-bottom: 28px;
 }
 
 .form-input {
@@ -208,6 +210,14 @@
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.form-input:focus + .form-text.tel {
+  transform: translate(-50%, -150%);
+}
+
+.form-input:focus + .form-text.mail {
+  transform: translate(-60%, -150%);
+}
+
 .form-input.comments {
   height: 120px;
   padding-left: 16px;
@@ -219,8 +229,14 @@
   left: 16px;
 }
 
+.form-input:focus + .form-text.comments {
+  transform: translateY(-150%);
+}
+
 .button.submit {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 40px;
+  display: block;
 }
 
 /* Наши преимущества */
