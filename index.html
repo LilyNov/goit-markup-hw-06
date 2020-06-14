@@ -510,7 +510,7 @@
               </svg>
             </label>
 
-            <label class="form-field">
+            <label class="form-field comments">
               <textarea
                 class="form-input comments"
                 name="comments"
@@ -521,11 +521,18 @@
             </label>
 
             <label class="consent">
-              <input type="checkbox" name="consent" />
-              <span class="form-text consent"></span>Соглашаюсь с рассылкой и
-              принимаю
+              <input
+                class="check-input"
+                type="checkbox"
+                name="consent"
+                value="consent"
+              />
+              <span class="checkbox"></span>
+              <span class="text consent"
+                >Соглашаюсь с рассылкой и принимаю &nbsp;
+                <a class="text-link" href="">Условия договора</a>
+              </span>
             </label>
-            <a href="">Условия договора</a>
 
             <button class="button submit" type="submit">Отправить</button>
           </form>
@@ -606,12 +613,18 @@
           </div>
         </div>
         <div class="foot-follow">
-          <b>подпишитесь на рассылку</b><br />
-          <input type="text" class="input" placeholder="  E-mail" />
-          <a href="" class="button primary">Подписаться</a>
+          <form>
+            <b>подпишитесь на рассылку</b><br />
+            <input
+              class="input"
+              class="foot-form"
+              type="text"
+              placeholder="E-mail"
+            />
+            <button class="button primary">Подписаться</button>
+          </form>
         </div>
       </div>
-
       <!-- Копирайт -->
       <div class="container">
         <p class="copyrigyt">2020 | Developed by GoIT Students</p>
