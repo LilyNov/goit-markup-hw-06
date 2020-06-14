@@ -262,6 +262,7 @@
 .consent {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
   cursor: pointer;
 }
@@ -280,7 +281,6 @@
 
 /* Оформляем чекбокс */
 .checkbox {
-  display: block;
   width: 15px;
   height: 16px;
   margin: 0;
